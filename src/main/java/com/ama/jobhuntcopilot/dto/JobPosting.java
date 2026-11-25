@@ -13,7 +13,7 @@ public record JobPosting(
         String title,
         String company,
         String location,
-        boolean remote,
+        Boolean remote,
         String language,
         String mustHaves,
         String niceToHaves,
