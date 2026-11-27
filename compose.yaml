@@ -18,7 +18,7 @@ services:
       - "org.springframework.boot.service-connection=postgres"
 
   ollama:
-    image: ollama/ollama
+    image: ollama/ollama:0.40.18
     ports:
       - "11434:11434"
     volumes:

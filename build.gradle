@@ -24,7 +24,13 @@ dependencies {
     implementation libs.spring.boot.starter.webmvc
     implementation platform(libs.spring.ai.bom)
     implementation libs.spring.ai.starter.model.anthropic
+    implementation libs.spring.ai.starter.model.ollama
+    implementation libs.spring.ai.starter.vector.store.pgvector
+    implementation libs.spring.ai.markdown.document.reader
+    implementation libs.spring.ai.pdf.document.reader
     implementation libs.jsoup
+    developmentOnly libs.spring.boot.docker.compose
+    developmentOnly libs.spring.ai.spring.boot.docker.compose
     compileOnly libs.lombok
     annotationProcessor libs.lombok
     testImplementation libs.spring.boot.starter.actuator.test
