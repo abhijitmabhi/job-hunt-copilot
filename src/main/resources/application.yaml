@@ -35,4 +35,9 @@ management:
 
 copilot:
   profile:
-    dir: ${COPILOT_PROFILE_DIR:./profile}
+    dir: ${COPILOT_PROFILE_DIR:file:./profile}
+
+logging:
+  level:
+    root: info
+    com.ama.jobhuntcopilot: debug
