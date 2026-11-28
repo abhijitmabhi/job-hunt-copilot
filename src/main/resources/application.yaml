@@ -1,3 +1,43 @@
 spring:
   application:
     name: job-hunt-copilot
+
+  ai:
+    model:
+      chat: anthropic
+      embedding: ollama
+    ollama:
+      init:
+        pull-model-strategy: never
+      embedding:
+        model: nomic-embed-text:v1.5
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 768
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY}
+      chat:
+        model: claude-haiku-5-5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+copilot:
+  profile:
+    dir: ${COPILOT_PROFILE_DIR:file:./profile}
+
+logging:
+  level:
+    root: info
+    com.ama.jobhuntcopilot: debug
